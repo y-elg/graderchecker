@@ -87,7 +87,21 @@ body {
   <!-- <a href="/" class="invis"> -->
       <h1>TOK</h1>
     <!-- </a> -->
-    <p class="fancy-text">It all works, in theory</p> </center>
+    <p class="fancy-text">It all works, in theory</p>
+
+
+    <form id="grad" method="get">
+      Grade: <input type="number" id="grado">
+    </form>
+
+    <p></p>
+    <p></p>
+
+    <button onclick="addon()"> New Grade </button>
+    <button onclick="average()">Average</button>
+    <button onclick="resetGrades()">Reset</button>
+
+  </center>
 
 
 
@@ -98,6 +112,45 @@ body {
   function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
   }
+
+
+
+
+
+  function addon(){
+    var grades = JSON.parse(localStorage.getItem("tGrades"));
+    var bla = document.getElementById('grado').value;
+    var alb = parseInt(bla)
+    grades.push(alb);
+    console.log(grades);
+    localStorage.setItem("tGrades", JSON.stringify(grades));
+  }
+
+
+  function average(){
+    var grades = JSON.parse(localStorage.getItem("tGrades"));
+    var tTotal = 0;
+    var tCount = grades.length
+    for(i = 0; i < grades.length; i++){
+        tTotal += grades[i];
+    }
+    console.log()
+    var avg = (tTotal/tCount);
+
+    console.log(avg);
+    window.alert(avg);
+    localStorage.setItem("tGrades", JSON.stringify(grades));
+  }
+
+  function resetGrades(){
+    var grades =  JSON.parse(localStorage.getItem("tGrades"));
+    var grades = []
+    localStorage.setItem("tGrades", JSON.stringify(grades));
+  }
+
+  </script>
+
+
   </script>
 
 </body>

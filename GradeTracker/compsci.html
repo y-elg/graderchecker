@@ -87,18 +87,71 @@ body {
   <!-- <a href="/" class="invis"> -->
       <h1>Comp Sci</h1>
     <!-- </a> -->
-    <p class="fancy-text">Java has had a real chip on his shoulder ever since he got that c+ on the math test</p> </center>
+    <p class="fancy-text">Java has had a real chip on his shoulder ever since he got that c+ on the math test</p>
+
+
+        <form id="grad" method="get">
+          Grade: <input type="number" id="grado">
+        </form>
+
+        <p></p>
+        <p></p>
+
+        <button onclick="addon()"> New Grade </button>
+        <button onclick="average()">Average</button>
+        <button onclick="resetGrades()">Reset</button>
+
+      </center>
 
 
 
-  <script>
-  function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-  }
-  function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-  }
-  </script>
+      <script>
+      function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+      }
+      function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+      }
 
-</body>
-</html>
+
+
+
+
+      function addon(){
+        var grades = JSON.parse(localStorage.getItem("cGrades"));
+        var bla = document.getElementById('grado').value;
+        var alb = parseInt(bla)
+        grades.push(alb);
+        console.log(grades);
+        localStorage.setItem("cGrades", JSON.stringify(grades));
+      }
+
+
+      function average(){
+        var grades = JSON.parse(localStorage.getItem("cGrades"));
+        var tTotal = 0;
+        var tCount = grades.length
+        for(i = 0; i < grades.length; i++){
+            tTotal += grades[i];
+        }
+        console.log()
+        var avg = (tTotal/tCount);
+
+        console.log(avg);
+        window.alert(avg);
+        localStorage.setItem("cGrades", JSON.stringify(grades));
+      }
+
+      function resetGrades(){
+        var grades =  JSON.parse(localStorage.getItem("cGrades"));
+        var grades = []
+        localStorage.setItem("cGrades", JSON.stringify(grades));
+      }
+
+      </script>
+
+
+      </script>
+
+    </body>
+    </html>

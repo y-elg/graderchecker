@@ -87,7 +87,21 @@ body {
   <!-- <a href="/" class="invis"> -->
       <h1>English</h1>
     <!-- </a> -->
-    <p class="fancy-text">The past, the present, and the future all walked into a bar. It was tense</p> </center>
+    <p class="fancy-text">The past, the present, and the future all walked into a bar. It was tense</p>
+
+
+    <form id="grad" method="get">
+      Grade: <input type="number" id="grado">
+    </form>
+
+    <p></p>
+    <p></p>
+
+    <button onclick="addon()"> New Grade </button>
+    <button onclick="average()">Average</button>
+    <button onclick="resetGrades()">Reset</button>
+
+  </center>
 
 
 
@@ -98,6 +112,45 @@ body {
   function closeNav() {
       document.getElementById("mySidenav").style.width = "0";
   }
+
+
+
+
+
+  function addon(){
+    var grades = JSON.parse(localStorage.getItem("eGrades"));
+    var bla = document.getElementById('grado').value;
+    var alb = parseInt(bla)
+    grades.push(alb);
+    console.log(grades);
+    localStorage.setItem("eGrades", JSON.stringify(grades));
+  }
+
+
+  function average(){
+    var grades = JSON.parse(localStorage.getItem("eGrades"));
+  	var tTotal = 0;
+    var tCount = grades.length
+  	for(i = 0; i < grades.length; i++){
+        tTotal += grades[i];
+  	}
+  	console.log()
+  	var avg = (tTotal/tCount);
+
+  	console.log(avg);
+    window.alert(avg);
+    localStorage.setItem("eGrades", JSON.stringify(grades));
+  }
+
+  function resetGrades(){
+    var grades =  JSON.parse(localStorage.getItem("eGrades"));
+    var grades = []
+    localStorage.setItem("eGrades", JSON.stringify(grades));
+  }
+
+  </script>
+
+
   </script>
 
 </body>
