@@ -1,0 +1,70 @@
+body {
+  background-color: #105b32;
+  color: white;
+  font-family: Roboto;
+}
+
+@font-face {
+  font-family: "Yanone Kaffeesatz";
+  src: url("/static/fonts/YanoneKaffeesatz-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("/static/fonts/AnonymousPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/static/fonts/Roboto-Regular.ttf");
+}
+
+h1 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 56px;
+}
+
+h2 {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 36px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#login {
+  border-right: 1px solid white;
+}
+
+.post-wrapper {
+  border: 1px solid black;
+}
+
+.dark-block {
+  display: inline-block;
+  padding: 10px;
+}
+
+.fancy-text {
+  font-size: 18px;
+  font-family: "Anonymous Pro";
+}
+
+.red {
+  color: #f22;
+}
+
+a.invis {
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  font-family: Roboto;
+  font-size: 18px;
+  background-color: #97caef;
+  border: none;
+  padding: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: white;
+}
